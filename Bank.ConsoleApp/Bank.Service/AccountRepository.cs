@@ -51,7 +51,7 @@ namespace Bank.ConsoleApp
                     account.AccountOwner.SocialSecurityNumber == socialSecurityNumber &&
                     account.AccountOwner.DateOfBirth == dateOfBirth)
                 {
-                    _success = RemoveAccount(account);
+                    return _success = RemoveAccount(account);
                 }
             }
             return _success;

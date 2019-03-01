@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Bank.ConsoleApp
 {
-    interface ITransactionRepository
+    public interface ITransactionRepository
     {
+        bool Withdrawal(Account account, decimal amount);
     }
 }

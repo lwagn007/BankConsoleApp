@@ -24,17 +24,11 @@ namespace Bank.ConsoleApp
             AccountSaving = depositSaving;
         }
 
-        private int AccountNumberCreate(Person person)
-        {
-
-            int number = person.SocialSecurityNumber + person.DateOfBirth.Year + person.DateOfBirth.Month + person.DateOfBirth.Day;
-
-            return number;
-        }
-
         public Account()
         {
 
         }
+
+        private int AccountNumberCreate(Person person) => person.SocialSecurityNumber + person.DateOfBirth.Year + person.DateOfBirth.Month + person.DateOfBirth.Day;
     }
 }

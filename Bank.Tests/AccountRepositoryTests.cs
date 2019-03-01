@@ -69,6 +69,17 @@ namespace Bank.Tests
             Assert.AreEqual(true, actual);
         }
 
+        [TestMethod]
+        public void AccountRepository_DeleteAccount_ShouldReturnTrue()
+        {
+            Arrange();
+
+            bool actual = _accountRepo.DeleteAccount(1333336477, "Test3!", 1333334448, new DateTime(2000, 09, 20));
+            int actualTwo = _accountRepo.GetAccounts().Count;
+            Assert.AreEqual(true, actual);
+            Assert.AreEqual(3, actualTwo);
+        }
+
         [DataTestMethod]
         [DataRow(1233430917, "Test1!")]
         [DataRow(1112230917, "Test2!")]
@@ -79,6 +90,16 @@ namespace Bank.Tests
             Arrange();
             Account account = _accountRepo.GetUserAccount(x, y);
             Assert.AreEqual(x, account.AccountNumber);
+        }
+
+        [TestMethod]
+        public void AccountRepository_GetAccounts_ReturnCorrectCount()
+        {
+            Arrange();
+
+            int actual = _accountRepo.GetAccounts().Count;
+
+            Assert.AreEqual(4, actual);
         }
     }
 }
