@@ -24,10 +24,25 @@ namespace Bank.ConsoleApp
                 if (account.AccountNumber != 0)
                     _success = AddAccount(account);
             }
+            else
+                _success = false;
             return _success;
         }
 
-        public bool DeleteAccount(int accountNumber, string password, string socialSecurityNumber, DateTime dateOfBirth)
+        public Account GetUserAccount(int number, string password)
+        {
+            Account account = new Account();
+            foreach (Account userAccount in _accounts)
+            {
+                if (number == userAccount.AccountNumber && password == userAccount.AccountPassword)
+                {
+                    account = userAccount;
+                }
+            }
+            return account;
+        }
+
+        public bool DeleteAccount(int accountNumber, string password, int socialSecurityNumber, DateTime dateOfBirth)
         {
             foreach (Account account in _accounts)
             {
@@ -42,28 +57,15 @@ namespace Bank.ConsoleApp
             return _success;
         }
 
-        public List<Account> GetAccounts()
-        {
-            return _accounts;
-        }
-
-        public Account GetUserAccount(int number, string password)
-        {
-            Account account = new Account();
-            foreach (Account userAccount in _accounts)
-            {
-                if (number == account.AccountNumber && password == account.AccountPassword)
-                {
-                    account = userAccount;
-                }
-            }
-            return account;
-        }
-
         private bool AddAccount(Account account)
         {
             _accounts.Add(account);
             return _success = true;
+        }
+
+        public List<Account> GetAccounts()
+        {
+            return _accounts;
         }
 
         private bool RemoveAccount(Account account)

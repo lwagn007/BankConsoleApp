@@ -17,19 +17,18 @@ namespace Bank.ConsoleApp
 
         public Account(Person person, string password, decimal depositChecking, decimal depositSaving)
         {
-            AccountNumber = AccountNumberCreate();
+            AccountNumber = AccountNumberCreate(person);
             AccountOwner = person;
             AccountPassword = password;
             AccountChecking = depositChecking;
             AccountSaving = depositSaving;
         }
 
-        private int AccountNumberCreate()
+        private int AccountNumberCreate(Person person)
         {
-            int min = 200000;
-            int max = 900000;
-            Random random = new Random();
-            int number = random.Next(min, max);
+
+            int number = person.SocialSecurityNumber + person.DateOfBirth.Year + person.DateOfBirth.Month + person.DateOfBirth.Day;
+
             return number;
         }
 

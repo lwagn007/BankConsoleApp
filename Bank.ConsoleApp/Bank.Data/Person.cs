@@ -11,9 +11,9 @@ namespace Bank.ConsoleApp
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string SocialSecurityNumber { get; set; }
+        public int SocialSecurityNumber { get; set; }
 
-        public Person(string firstName, string lastName, DateTime dateOfBirth, string socialSecurityNumber)
+        public Person(string firstName, string lastName, DateTime dateOfBirth, int socialSecurityNumber)
         {
             FirstName = firstName;
             LastName = lastName;
