@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Bank.ConsoleApp
 {
-    class Program
+    public class TransactionRepository
     {
-        static void Main(string[] args)
-        {
-            ProgramUI program = new ProgramUI();
-            program.Run();
-        }
+
     }
 }

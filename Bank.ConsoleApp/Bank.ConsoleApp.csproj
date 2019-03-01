@@ -43,11 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bank.Data\Account.cs" />
+    <Compile Include="Bank.Service\AccountRepository.cs" />
+    <Compile Include="Bank.Contracts\ITransactionRepository.cs" />
+    <Compile Include="Bank.Data\Person.cs" />
+    <Compile Include="Bank.Contracts\IAccountRepository.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bank.Data\Transaction.cs" />
+    <Compile Include="Bank.Service\TransactionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bank.Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
